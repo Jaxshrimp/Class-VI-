@@ -7,6 +7,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 75px;
 }
 
 body {
@@ -15,66 +16,15 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #101c36, #080d19);
-}
-
-header h1 {
-  font-size: 40px;
-  color: #60a5fa;
-}
-
-header p {
-  margin-top: 15px;
-  color: #b8c7df;
-}
-
-/* NAVIGATION */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  padding: 20px;
-  background: rgba(8, 13, 25, 0.95);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #26344d;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #ffd700;
-}
-
-/* SECTIONS */
-section {
-  padding: 60px 25px;
-  text-align: center;
-}
-
-section h2 {
-  color: #60a5fa;
-  margin-bottom: 20px;
-}
-
 /* HERO */
+
 .hero {
   min-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 30px;
+  text-align: center;
   background:
     radial-gradient(circle at top, #1e3a8a55, transparent 60%),
     #080d19;
@@ -82,7 +32,6 @@ section h2 {
 
 .hero-content {
   max-width: 700px;
-  text-align: center;
   animation: muncul 1s ease;
 }
 
@@ -127,37 +76,64 @@ section h2 {
   background: #60a5fa;
 }
 
-/* ANIMATION */
-@keyframes muncul {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+/* NAVIGATION */
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 20px;
+  background: rgba(8, 13, 25, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #26344d;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+nav a:hover {
+  color: #ffd700;
+}
+
+/* GENERAL SECTION */
+
+section {
+  padding: 60px 25px;
+  text-align: center;
+}
+
+section h2 {
+  color: #60a5fa;
+  margin-bottom: 20px;
 }
 
 /* ABOUT */
+
 .about-desc {
   max-width: 600px;
   margin: 20px auto;
   line-height: 1.8;
-  text-align: center;
+}
+
+.class-motto {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #111827;
+  border: 1px solid #26344d;
+  border-radius: 16px;
+}
+
+.class-motto h3 {
+  color: #60a5fa;
+  margin-bottom: 12px;
 }
 
 .about-info {
@@ -182,11 +158,8 @@ section h2 {
   margin-bottom: 8px;
 }
 
-.info-card p {
-  margin: 0;
-}
-
 /* STRUCTURE */
+
 #structure {
   background:
     radial-gradient(circle at top, #18243b, #080d19 70%);
@@ -207,7 +180,6 @@ section h2 {
   max-width: 300px;
   margin: 30px auto;
   padding: 25px;
-  text-align: center;
   background: linear-gradient(135deg, #332600, #171717);
   border: 2px solid #ffd700;
   border-radius: 18px;
@@ -217,7 +189,6 @@ section h2 {
 }
 
 .wali-card h3 {
-  color: #ffd700;
   margin-bottom: 12px;
 }
 
@@ -227,7 +198,7 @@ section h2 {
 
 .structure-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
   max-width: 900px;
   margin: 30px auto;
@@ -238,7 +209,6 @@ section h2 {
   border: 1px solid #26344d;
   border-radius: 16px;
   padding: 25px;
-  color: white;
   transition: 0.3s;
   animation: fadeUp 0.7s ease both;
 }
@@ -257,10 +227,12 @@ section h2 {
   color: #cbd5e1;
 }
 
-/* MEMBERS */
+/* MEMBERS TABLE */
+
 .member-container {
+  max-width: 1000px;
+  margin: 20px auto;
   overflow-x: auto;
-  margin-top: 20px;
 }
 
 .member-table {
@@ -276,7 +248,8 @@ section h2 {
 }
 
 .member-table th {
-  background: rgba(255,255,255,0.08);
+  background: #17243a;
+  color: #60a5fa;
 }
 
 .member-table tr:hover {
@@ -284,6 +257,7 @@ section h2 {
 }
 
 /* GALLERY */
+
 #gallery h2 {
   color: #ffd700;
   letter-spacing: 2px;
@@ -308,17 +282,15 @@ section h2 {
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  gap: 20px;
   max-width: 1200px;
-  margin: auto;
+  margin: 30px auto;
 }
 
 .gallery-card {
-  width: 100%;
-  min-width: 0;
   background: #111827;
   border: 1px solid #26344d;
-  border-radius: 15px;
+  border-radius: 16px;
   overflow: hidden;
   transition: 0.3s;
 }
@@ -330,28 +302,37 @@ section h2 {
 
 .gallery-card img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
   display: block;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s;
 }
 
 .gallery-card img:hover {
   transform: scale(1.05);
 }
 
-.gallery-card p {
-  padding: 10px 5px;
+.photo-info {
+  padding: 15px;
+}
+
+.photo-info h3 {
+  color: #60a5fa;
+  margin-bottom: 8px;
+}
+
+.photo-info p {
   color: #cbd5e1;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 /* BACK TO TOP */
+
 .back-to-top {
   display: block;
   width: fit-content;
-  margin: 20px auto;
+  margin: 25px auto;
   padding: 12px 22px;
   color: #ffd700;
   border: 1px solid #ffd700;
@@ -366,14 +347,54 @@ section h2 {
 }
 
 /* FOOTER */
+
 footer {
   text-align: center;
-  padding: 25px;
+  padding: 30px 20px;
   background: #111827;
   color: #94a3b8;
+  line-height: 1.8;
+}
+
+footer h3 {
+  color: #60a5fa;
+  margin-bottom: 10px;
+}
+
+/* ANIMATIONS */
+
+@keyframes muncul {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .gallery-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 /* MOBILE */
+
 @media (max-width: 600px) {
   nav {
     gap: 12px;
@@ -385,29 +406,23 @@ footer {
   }
 
   section {
-    padding: 50px 12px;
-  }
-
-  .member-container {
-    overflow-x: auto;
+    padding: 50px 15px;
   }
 
   .structure-container {
     grid-template-columns: 1fr;
   }
 
-  /* TETAP 4 KOLOM DI HP */
   .gallery-container {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
   .gallery-card img {
-    height: 110px;
+    height: 150px;
   }
 
-  .gallery-card p {
-    font-size: 10px;
-    padding: 6px 2px;
+  .member-table {
+    min-width: 550px;
   }
 }
