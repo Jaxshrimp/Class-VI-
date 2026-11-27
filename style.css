@@ -15,7 +15,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* HEADER */
 header {
   text-align: center;
   padding: 100px 20px;
@@ -31,7 +30,6 @@ header p {
   color: #aab8d0;
 }
 
-/* NAVBAR */
 nav {
   position: sticky;
   top: 0;
@@ -60,7 +58,6 @@ nav a:hover {
   color: #60a5fa;
 }
 
-/* SECTION */
 section {
   padding: 60px 20px;
 }
@@ -71,7 +68,6 @@ section h2 {
   color: #60a5fa;
 }
 
-/* MEMBER TABLE */
 .member-container {
   max-width: 1100px;
   margin: auto;
@@ -102,7 +98,6 @@ section h2 {
   background: #17243a;
 }
 
-/* TWO TABLES */
 .member-tables {
   display: flex;
   gap: 20px;
@@ -116,7 +111,6 @@ section h2 {
   min-width: 0;
 }
 
-/* GALLERY */
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -136,7 +130,6 @@ section h2 {
   transform: scale(1.03);
 }
 
-/* STRUCTURE */
 .structure-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -164,7 +157,6 @@ section h2 {
   color: #60a5fa;
 }
 
-/* WALI KELAS */
 .wali-card {
   max-width: 300px;
   margin: 0 auto 35px;
@@ -181,7 +173,6 @@ section h2 {
   margin-bottom: 10px;
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   padding: 40px 20px;
@@ -195,7 +186,6 @@ footer h2 {
   margin-bottom: 15px;
 }
 
-/* ANIMATION */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -212,7 +202,6 @@ footer h2 {
   animation: fadeUp 0.6s ease;
 }
 
-/* MOBILE */
 @media (max-width: 600px) {
   nav ul {
     gap: 12px;
